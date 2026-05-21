@@ -1,74 +1,165 @@
-<<<<<<< HEAD
-# Trabajo-front
-=======
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mi Boleta Frontend
 
-## Available Scripts
+Frontend desarrollado en React + TypeScript para la gestión de rifas, loterías, sorteos y boletas.
+La aplicación permite registrar y administrar tickets de juego en un solo lugar, evitando perder información importante sobre números jugados, fechas y premios.
 
-In the project directory, you can run:
+📌 Descripción
 
-### `npm start`
+Muchas personas participan constantemente en:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Rifas
+Loterías
+Sorteos
+Boletas
+Juegos ocasionales
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Pero frecuentemente olvidan:
 
-### `npm test`
+Qué número jugaron
+Cuándo era el sorteo
+Dónde compraron la boleta
+Si el ticket ganó o no
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este proyecto busca centralizar toda esa información mediante una aplicación web moderna y organizada.
 
-### `npm run build`
+🚀 Tecnologías utilizadas
+React
+TypeScript
+React Router DOM
+Axios
+Context API
+CSS moderno y responsive
+Arquitectura limpia (Clean Architecture)
+🧱 Arquitectura del frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+El proyecto sigue una estructura basada en Clean Architecture:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+src/
+├── application/
+│   └── dtos/
+│
+├── domain/
+│   ├── entities/
+│   └── repositories/
+│
+├── infrastructure/
+│   ├── api/
+│   ├── auth/
+│   ├── repositories/
+│   └── storage/
+│
+├── presentation/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── pages/
+│   ├── routes/
+│   └── styles/
+🔐 Autenticación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La aplicación incluye:
 
-### `npm run eject`
+✅ Registro de usuarios
+✅ Inicio de sesión
+✅ Persistencia de sesión con localStorage
+✅ Manejo de JWT
+✅ Logout
+✅ Protección de rutas
+✅ Rutas para administradores
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+La autenticación fue implementada usando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+AuthContext
+ProtectedRoute
+AdminRoute
+🎟️ Gestión de Tickets
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Cada usuario puede:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+✅ Crear tickets
+✅ Editar tickets
+✅ Eliminar tickets
+✅ Consultar historial
+✅ Ver próximos sorteos
 
-## Learn More
+Cada ticket contiene:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Nombre del sorteo
+Tipo de juego
+Número jugado
+Fecha
+Valor apostado
+Lugar de compra
+Estado
+Notas
+👤 Panel de administrador
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+El administrador puede:
 
-### Code Splitting
+✅ Ver tickets de todos los usuarios
+✅ Visualizar el dueño del ticket
+✅ Filtrar información
+✅ Consultar estadísticas generales
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+⚙️ Instalación
+1. Clonar repositorio
+git clone <repo>
+2. Instalar dependencias
+npm install
+3. Ejecutar el proyecto
+npm start
 
-### Analyzing the Bundle Size
+o
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm run dev
+🌐 API Backend
 
-### Making a Progressive Web App
+El frontend consume una API REST desarrollada con:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Express
+Prisma
+PostgreSQL
+JWT
+TypeScript
 
-### Advanced Configuration
+Base URL:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+http://localhost:4000/api/v1
+🔑 Variables importantes
 
-### Deployment
+La autenticación utiliza tokens JWT almacenados localmente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Headers utilizados:
 
-### `npm run build` fails to minify
+Authorization: Bearer <token>
+📱 Funcionalidades implementadas
+Usuarios
+Registro
+Login
+Logout
+Persistencia de sesión
+Tickets
+CRUD completo
+Modal de creación
+Edición dinámica
+Eliminación con confirmación
+Dashboard
+Estadísticas
+Próximos sorteos
+Historial
+Admin
+Vista global del sistema
+Información del propietario del ticket
+🎨 Diseño
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> master
+La interfaz utiliza:
+
+Cards modernas
+Navbar responsive
+Gradientes
+Estados visuales
+Componentes reutilizables
+
+Consumo de APIs REST
+Routing
