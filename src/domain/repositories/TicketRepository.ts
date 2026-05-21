@@ -47,11 +47,15 @@ export interface PaginatedTickets {
 }
 
 export interface TicketRepository {
-  getTickets(filters?: TicketFilters): Promise<PaginatedTickets>;
+  getTickets(
+    filters?: TicketFilters
+  ): Promise<PaginatedTickets>;
 
   getTicketById(id: string): Promise<Ticket>;
 
-  createTicket(data: CreateTicketData): Promise<Ticket>;
+  createTicket(
+    data: CreateTicketData
+  ): Promise<Ticket>;
 
   updateTicket(
     id: string,

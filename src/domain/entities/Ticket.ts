@@ -7,6 +7,12 @@ export type GameType =
   | "Boleta"
   | "Juego ocasional";
 
+export interface TicketOwner {
+  id: string;
+  name: string;
+  email: string;
+}
+
 export interface Ticket {
   id: string;
   title: string;
@@ -17,6 +23,7 @@ export interface Ticket {
   place?: string;
   status: TicketStatus;
   notes?: string;
+  owner?: TicketOwner; // ← solo llega desde /admin/tickets
   createdAt: string;
   updatedAt: string;
 }
